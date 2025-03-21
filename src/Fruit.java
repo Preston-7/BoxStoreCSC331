@@ -1,3 +1,15 @@
+/**
+ * Fruit.java
+ *
+ * To show the description of the fruit
+ *
+ * @author Mahmmod Dhalai
+ * Date: March 21, 2025
+ * Section: CSC-331-002
+ *
+ * Purpose: To describe a fruit
+ */
+
 class Fruit extends FoodItem {
     private String taste;
     private String size;

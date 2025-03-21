@@ -1,9 +1,21 @@
-class Vegetable extends FoodItem {
+/**
+ * Vegetables.java
+ *
+ * To show the description of the vegetables
+ *
+ * @author Mahmmod Dhalai
+ * Date: March 21, 2025
+ * Section: CSC-331-002
+ *
+ * Purpose: Describe a vegetables
+ */
+
+class Vegetables extends FoodItem {
     private String texture;
     private String color;
 
 
-    public Vegetable(String name, int calories, double price, String texture, String color) {
+    public Vegetables(String name, int calories, double price, String texture, String color) {
         super(name, calories, price);
         this.texture = texture;
         this.color = color;
