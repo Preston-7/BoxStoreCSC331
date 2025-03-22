@@ -17,6 +17,7 @@ public class ClothingItem {
     private String size;
     private String material;
     private int quantity;
+    private String brand;
 
     /**
      * Constructs a new ClothingItem with the specified attributes.
@@ -29,13 +30,14 @@ public class ClothingItem {
      * @param quantity the quantity of the clothing item in stock
      */
 
-    public ClothingItem(String name, String color, double price, String size, String material, int quantity) {
+    public ClothingItem(String name, String color, double price, String size, String material, int quantity, String brand) {
         this.name = name;
         this.color = color;
         this.price = price;
         this.size = size;
         this.material = material;
         this.quantity = quantity;
+        this.brand = brand;
     }
 
     /**
@@ -89,6 +91,15 @@ public class ClothingItem {
 
     /**
      *
+     * @return brand
+     *
+     */
+    public String getBrand() {
+        return brand;
+    }
+
+    /**
+     *
      * @param name
      */
     public void setName(String name) {
@@ -133,6 +144,27 @@ public class ClothingItem {
      */
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    /**
+     *
+     * @param brand
+     */
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    @Override
+    public String toString() {
+        return "ClothingItem{" +
+                "name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
+                ", size='" + size + '\'' +
+                ", color='" + color + '\'' +
+                ", material='" + material + '\'' +
+                ", price=" + price + '\'' +
+                ", quantity=" + quantity +
+                '}';
     }
 
 }
