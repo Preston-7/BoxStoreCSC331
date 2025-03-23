@@ -128,15 +128,37 @@ public class HouseholdItem {
         this.weight = weight;
     }
 
-    @Override
-    public String toString() {
-        return "HouseholdItem{" +
-                "name='" + name + '\'' +
-                ", color='" + color + '\'' +
-                ", material='" + material + '\'' +
-                ", price=" + price + '\'' +
-                ", quantity=" + quantity + +'\'' +
-                ", weight=" + weight +
-                '}';
+    /**
+     * Displays detailed information about household items.
+     * This includes the items name, price, quantity, weight, material, color.
+     */
+    // Method to display item details
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Price: $" + price);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Weight: " + weight + " kg");
+        System.out.println("Material: " + material);
+        System.out.println("Color: " + color);
+    }
+
+    // Method to apply a discount
+    public void applyDiscount(double percent) {
+        if (percent > 0 && percent <= 100) {
+            price -= price * (percent / 100);
+            System.out.println("Discount applied! New price: $" + price);
+        } else {
+            System.out.println("Invalid discount percentage.");
+        }
+    }
+
+    // Method to update quantity
+    public void updateQuantity(int newQuantity) {
+        if (newQuantity >= 0) {
+            quantity = newQuantity;
+            System.out.println("Quantity updated to: " + quantity);
+        } else {
+            System.out.println("Quantity cannot be negative.");
+        }
     }
 }

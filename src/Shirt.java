@@ -87,16 +87,7 @@ class Shirt extends ClothingItem {
     public boolean checkShirtSizeAvailability(String requestedSize) {
         return this.getSize().equals(requestedSize) && this.getQuantity() > 0;
     }
-    /**
-     * Applies a discount to the shirt's price based on the given discount percentage.
-     *
-     * @param discountPercentage the percentage of the discount to apply to the shirt's price.
-     *                           This should be a positive value representing the discount rate.
-     */
-    public void applyShirtDiscount(double discountPercentage) {
-        double discountedPrice = this.getPrice() * (1 - discountPercentage / 100);
-        this.setPrice(discountedPrice);
-    }
+
     /**
      * Changes the material of the shirt.
      *
@@ -106,18 +97,7 @@ class Shirt extends ClothingItem {
         this.setMaterial(newMaterial);
     }
 
-    /**
-     * Updates the stock of the shirt by the specified quantity sold.
-     *
-     * @param quantitySold the quantity of the shirt sold.
-     */
-    public void updateShirtStock(int quantitySold) {
-        if (this.getQuantity() >= quantitySold) {
-            this.setQuantity(this.getQuantity() - quantitySold);
-        } else {
-            System.out.println("Not enough stock available.");
-        }
-    }
+
     /**
      * Displays detailed information about the shirt.
      * This includes the shirt's name, brand, size, color, material, type, pattern, fit, and price.

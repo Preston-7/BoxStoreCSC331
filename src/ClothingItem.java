@@ -4,7 +4,7 @@
  * To show the description of the clothing items
  *
  * @author Preston Beachum
- * Date: March 21, 2025
+ * Date: March 27, 2025
  * Section: CSC-331-002
  *
  * Purpose: To describe clothing items
@@ -154,17 +154,50 @@ public class ClothingItem {
         this.brand = brand;
     }
 
-    @Override
-    public String toString() {
-        return "ClothingItem{" +
-                "name='" + name + '\'' +
-                ", brand='" + brand + '\'' +
-                ", size='" + size + '\'' +
-                ", color='" + color + '\'' +
-                ", material='" + material + '\'' +
-                ", price=" + price + '\'' +
-                ", quantity=" + quantity +
-                '}';
+
+
+    /**
+     * Displays detailed information about clothing items.
+     * This includes the items name, price, quantity, material, color, size, brand.
+     */
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Price: $" + price);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Material: " + material);
+        System.out.println("Color: " + color);
+        System.out.println("Size: " + size);
+        System.out.println("Brand: " + brand);
+    }
+    /**
+     * Applies a discount to the clothing items price based on the given discount percentage.
+     *
+     * @param percent the percentage of the discount to apply to the shoe's price.
+     *                           This should be a positive value representing the discount rate.
+     */
+    public void applyDiscount(double percent) {
+        if (percent > 0 && percent <= 100) {
+            price -= price * (percent / 100);
+            System.out.println("Discount applied! New price: $" + price);
+        } else {
+            System.out.println("Invalid discount percentage.");
+        }
+    }
+
+    /**
+     * A method that is able to update quantity of clothing items
+     * and checks to make sure there is the correct quantity to update
+     *
+     * @param newQuantity
+     *
+     */
+    public void updateQuantity(int newQuantity) {
+        if (newQuantity >= 0) {
+            quantity = newQuantity;
+            System.out.println("Quantity updated to: " + quantity);
+        } else {
+            System.out.println("Quantity cannot be negative.");
+        }
     }
 
 }

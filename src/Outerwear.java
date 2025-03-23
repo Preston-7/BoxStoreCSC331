@@ -107,31 +107,9 @@ class Outerwear extends ClothingItem{
     }
 
     /**
-     * Applys discounts to the outerwear prices
-     * @param discountPercentage
-     */
-    public void applyOuterwearDiscount(double discountPercentage) {
-        double discountedPrice = this.getPrice() * (1 - discountPercentage / 100);
-        this.setPrice(discountedPrice);
-    }
-
-    /**
-     * Updates the stock of the item
-     * @param quantitySold
-     */
-    public void updateOuterwearStock(int quantitySold) {
-        if (this.getQuantity() >= quantitySold) {
-            this.setQuantity(this.getQuantity() - quantitySold);
-        } else {
-            System.out.println("Not enough stock available.");
-        }
-    }
-
-    /**
      * Displays information about the outerwear
      * This includes, name, brand, size, color, material, style, insulation, weather resistance, price
      */
-    // Behavior 4: Display detailed information about the outerwear
     public void displayOuterwearInfo() {
         System.out.println("Outerwear Name: " + this.getName());
         System.out.println("Brand: " + this.getBrand());

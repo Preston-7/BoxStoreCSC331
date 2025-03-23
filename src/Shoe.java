@@ -4,7 +4,7 @@
  * To show the description of shoes
  *
  * @author Preston Beachum
- * Date: March 21, 2025
+ * Date: March 27, 2025
  * Section: CSC-331-002
  *
  * Purpose: To describe shoes
@@ -71,18 +71,6 @@ class Shoe extends ClothingItem {
      */
     public boolean checkShoeSizeAvailability(String requestedSize) {
         return this.getSize().equals(requestedSize) && this.getQuantity() > 0;
-    }
-
-
-    /**
-     * Applies a discount to the shoe's price based on the given discount percentage.
-     *
-     * @param discountPercentage the percentage of the discount to apply to the shoe's price.
-     *                           This should be a positive value representing the discount rate.
-     */
-    public void applyShoeDiscount(double discountPercentage) {
-        double discountedPrice = this.getPrice() * (1 - discountPercentage / 100);
-        this.setPrice(discountedPrice);
     }
 
 
