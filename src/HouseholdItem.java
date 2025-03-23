@@ -9,156 +9,88 @@
  *
  * Purpose: To describe household items
  */
-
-public class HouseholdItem {
-    private String name;
-    private String color;
-    private double price;
-    private String material;
-    private int quantity;
-    private int weight;
+public class HouseholdItem extends StoreItem {
+    private String category;
+    private double weight;
+    private String dimensions;
 
     /**
-     * Constructs a new ClothingItem with the specified attributes.
+     * Constructs a new HouseholdItem with specified attributes.
      *
-     * @param name     the name of the clothing item
-     * @param color    the color of the clothing item
-     * @param price    the price of the clothing item
-     * @param material the material of the clothing item
-     * @param quantity the quantity of the clothing item in stock
-     * @param weight the weight of the household item
+     * @param name
+     * @param color
+     * @param price
+     * @param size
+     * @param material
+     * @param quantity
+     * @param brand
+     * @param category
+     * @param weight
+     * @param dimensions
      */
-
-    public HouseholdItem(String name, String color, double price, String material, int quantity, int weight) {
-        this.name = name;
-        this.color = color;
-        this.price = price;
-        this.material = material;
-        this.quantity = quantity;
+    public HouseholdItem(String name, String color, double price, String size, String material, int quantity, String brand, String category, double weight, String dimensions) {
+        super(name, color, price, size, material, quantity, brand);
+        this.category = category;
         this.weight = weight;
-    }
-
-    // Getters
-    /**
-     *
-     * @return name
-     */
-    public String getName() {
-        return name;
+        this.dimensions = dimensions;
     }
 
     /**
      *
-     * @return color
+     * @return category
      */
-    public String getColor() {
-        return color;
-    }
-
-    /**
-     *
-     * @return price
-     */
-    public double getPrice() {
-        return price;
-    }
-
-    /**
-     *
-     * @return material
-     */
-    public String getMaterial() {
-        return material;
-    }
-
-    /**
-     *
-     * @return quantity
-     */
-    public int getQuantity() {
-        return quantity;
+    public String getCategory() {
+        return category;
     }
 
     /**
      *
      * @return weight
      */
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-
-    // Setters
     /**
-     * @param name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * @param color
-     */
-    public void setColor(String color) {
-        this.color = color;
-    }
-    /**
-     * @param price
-     */
-    public void setPrice(double price) {
-        this.price = price;
-    }
-    /**
-     * @param material
      *
+     * @return dimensions
      */
-    public void setMaterial(String material) {
-        this.material = material;
+    public String getDimensions() {
+        return dimensions;
     }
+
     /**
-     * @param quantity
+     *
+     * @param category
      */
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setCategory(String category) {
+        this.category = category;
     }
+
     /**
+     *
      * @param weight
      */
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
     /**
-     * Displays detailed information about household items.
-     * This includes the items name, price, quantity, weight, material, color.
+     *
+     * @param dimensions
      */
-    // Method to display item details
+    public void setDimensions(String dimensions) {
+        this.dimensions = dimensions;
+    }
+
+    /**
+     * Displays detailed information about the household item.
+     */
+    @Override
     public void displayDetails() {
-        System.out.println("Name: " + name);
-        System.out.println("Price: $" + price);
-        System.out.println("Quantity: " + quantity);
-        System.out.println("Weight: " + weight + " kg");
-        System.out.println("Material: " + material);
-        System.out.println("Color: " + color);
-    }
-
-    // Method to apply a discount
-    public void applyDiscount(double percent) {
-        if (percent > 0 && percent <= 100) {
-            price -= price * (percent / 100);
-            System.out.println("Discount applied! New price: $" + price);
-        } else {
-            System.out.println("Invalid discount percentage.");
-        }
-    }
-
-    // Method to update quantity
-    public void updateQuantity(int newQuantity) {
-        if (newQuantity >= 0) {
-            quantity = newQuantity;
-            System.out.println("Quantity updated to: " + quantity);
-        } else {
-            System.out.println("Quantity cannot be negative.");
-        }
+        super.displayDetails();
+        System.out.println("Category: " + category);
+        System.out.println("Weight: " + weight + " lbs");
+        System.out.println("Dimensions: " + dimensions);
     }
 }

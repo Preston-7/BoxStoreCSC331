@@ -10,7 +10,6 @@
  * Purpose: To describe outerwear
  */
 class Outerwear extends ClothingItem{
-    private String season;
     private String insulation;
     private String style;
     private String weatherResistance;
@@ -30,21 +29,13 @@ class Outerwear extends ClothingItem{
      * @param material
      * @param style
      */
-    public Outerwear(String name, String color, double price, String size, String material, int quantity, String brand, String season, String insulation, String style, String weatherResistance) {
-        super(name, color, price, size, material, quantity, brand);
-        this.season = season;
+    public Outerwear(String name, String color, double price, String type, String size, int quantity, String brand, String material, String season, String gender, String insulation, String style, String weatherResistance) {
+        super(name, color, price, size, material, quantity, brand, type, season, gender);
         this.insulation = insulation;
         this.style = style;
         this.weatherResistance = weatherResistance;
     }
 
-    /**
-     *
-     * @return season
-     */
-    public String getSeason() {
-        return season;
-    }
     /**
      *
      * @return insulation
@@ -66,13 +57,6 @@ class Outerwear extends ClothingItem{
      */
     public String getWeatherResistance() {
         return weatherResistance;
-    }
-    /**
-     *
-     * @param season
-     */
-    public void setSeason(String season) {
-        this.season = season;
     }
     /**
      *
@@ -111,32 +95,9 @@ class Outerwear extends ClothingItem{
      * This includes, name, brand, size, color, material, style, insulation, weather resistance, price
      */
     public void displayOuterwearInfo() {
-        System.out.println("Outerwear Name: " + this.getName());
-        System.out.println("Brand: " + this.getBrand());
-        System.out.println("Size: " + this.getSize());
-        System.out.println("Color: " + this.getColor());
-        System.out.println("Material: " + this.getMaterial());
-        System.out.println("Style: " + this.getStyle());
-        System.out.println("Insulation: " + this.getInsulation());
-        System.out.println("Weather Resistance: " + this.getWeatherResistance());
-        System.out.println("Price: " + this.getPrice());
+        super.displayDetails();
+        System.out.println("Insulation: " + insulation);
+        System.out.println("Style: " + style);
+        System.out.println("Weather Resistance: " + weatherResistance);
     }
-
-
-    /**
-     * Overrides the toString method to include additional information about the outerwear.
-     *
-     * @return a string representation of the outerwear object.
-     */
-
-    @Override
-    public String toString() {
-        return "Outerwear{" +
-                "season='" + season + '\'' +
-                ", insulation='" + insulation + '\'' +
-                ", style='" + style + '\'' +
-                ", weatherResistance='" + weatherResistance + '\'' +
-                '}';
-    }
-
 }

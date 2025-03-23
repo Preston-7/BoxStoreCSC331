@@ -11,7 +11,6 @@
  */
 
 class Shirt extends ClothingItem {
-    private String shirtType;
     private String shirtPattern;
     private String shirtFit;
     /**
@@ -24,24 +23,16 @@ class Shirt extends ClothingItem {
      * @param material
      * @param quantity
      * @param brand
-     * @param shirtType
      * @param shirtPattern
      * @param shirtFit
      */
-    public Shirt(String name, String color, double price, String size, String material, int quantity, String brand, String shirtType, String shirtPattern, String shirtFit) {
-        super(name, color, price, size, material, quantity, brand);
-        this.shirtType = shirtType;
+    public Shirt(String name, String color, double price, String type, String size, int quantity, String brand, String material, String season, String gender, String shirtPattern, String shirtFit) {
+        super(name, color, price, size, material, quantity, brand, type, season, gender);
         this.shirtPattern = shirtPattern;
         this.shirtFit = shirtFit;
     }
 
-    /**
-     *
-     * @return shirtType
-     */
-    public String getType() {
-        return shirtType;
-    }
+
     /**
      *
      * @return shirtPattern
@@ -57,13 +48,7 @@ class Shirt extends ClothingItem {
     public String getFit() {
         return shirtFit;
     }
-    /**
-     *
-     * @param shirtType
-     */
-    public void setType(String shirtType) {
-        this.shirtType = shirtType;
-    }
+
     /**
      *
      * @param shirtPattern
@@ -103,25 +88,10 @@ class Shirt extends ClothingItem {
      * This includes the shirt's name, brand, size, color, material, type, pattern, fit, and price.
      */
     public void displayShirtInfo() {
-        System.out.println("Shirt Name: " + this.getName());
-        System.out.println("Brand: " + this.getBrand());
-        System.out.println("Size: " + this.getSize());
-        System.out.println("Color: " + this.getColor());
-        System.out.println("Material: " + this.getMaterial());
-        System.out.println("Type: " + this.getType());
-        System.out.println("Pattern: " + this.getPattern());
-        System.out.println("Fit: " + this.getFit());
-        System.out.println("Price: $" + this.getPrice());
+        super.displayDetails();
+        System.out.println("Shirt fit: " + shirtFit);
+        System.out.println("Shirt pattern: " + shirtPattern);
     }
 
-    /**
-     * Overrides the toString method to include additional information about the shoe.
-     *
-     * @return a string representation of the Shoe object.
-     */
-    @Override
-    public String toString() {
-        return super.toString() + ", ShirtPattern='" + shirtPattern + '\'' + ", ShirtFit='" + shirtFit + '\'' + ", ShirtType" + shirtType + '\'';
-    }
 
 }

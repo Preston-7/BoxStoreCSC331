@@ -11,7 +11,6 @@
  */
 
 class Shoe extends ClothingItem {
-    private String shoeType;
     private String shoeCondition;
 
     /**
@@ -24,21 +23,14 @@ class Shoe extends ClothingItem {
      * @param material
      * @param quantity
      * @param shoeCondition
-     * @param shoeType
      * @param brand
      */
-    public Shoe(String name, String color, double price, String size, String material, int quantity, String shoeType, String shoeCondition, String brand) {
-        super(name, color, price, size, material, quantity, brand);
-        this.shoeType = shoeType;
+    public Shoe(String name, String color, double price, String type, String size, int quantity, String brand, String material, String season, String gender, String shoeCondition) {
+        super(name, color, price, size, material, quantity, brand, type, season, gender);
         this.shoeCondition = shoeCondition;
     }
 
-    /**
-     * @return shoeType
-     */
-    public String getShoeType() {
-        return shoeType;
-    }
+
 
     /**
      * @return shoeCondition
@@ -47,13 +39,7 @@ class Shoe extends ClothingItem {
         return shoeCondition;
     }
 
-    /**
-     *
-     * @param shoeType
-     */
-    public void setShoeType(String shoeType) {
-        this.shoeType = shoeType;
-    }
+
 
     /**
      * @param shoeCondition
@@ -89,23 +75,9 @@ class Shoe extends ClothingItem {
      * This includes the shoe's name, brand, size, color, material, type, condition, and price.
      */
     public void displayShoeInfo() {
-        System.out.println("Shoe Name: " + this.getName());
-        System.out.println("Brand: " + this.getBrand());
-        System.out.println("Size: " + this.getSize());
-        System.out.println("Color: " + this.getColor());
-        System.out.println("Material: " + this.getMaterial());
-        System.out.println("Type: " + this.getShoeType());
-        System.out.println("Condition: " + this.getShoeCondition());
-        System.out.println("Price: " + this.getPrice());
+        super.displayDetails();
+        System.out.println("Shoe condition: " + shoeCondition);
     }
 
-    /**
-     * Overrides the toString method to include additional information about the shoe.
-     *
-     * @return a string representation of the Shoe object.
-     */
-    @Override
-    public String toString() {
-        return super.toString() + ", ShoeType='" + shoeType + '\'' + ", ShoeCondition='" + shoeCondition + '\'';
-    }
+
 }
