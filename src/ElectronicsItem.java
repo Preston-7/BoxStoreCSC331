@@ -2,7 +2,7 @@
  * Class: CSC-331-002
  * @author Gabriel Strickland
  * Date: 3/27/2025
- * Purpose: Electronics I
+ * Purpose: Electronics Item Class
  */
 
 public class ElectronicsItem {
