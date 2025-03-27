@@ -10,33 +10,49 @@
  * Purpose: To describe shelf stables
  */
 
-class ShelfStable extends FoodItem {
-    private String storageCondition;
-    private String expirationDate;
+class ShelfStable extends HouseholdItem {
+    private String TableSize;
 
-    public ShelfStable(String name, String color, double price, String size, String material, int quantity, String brand, int calories, String storageCondition, String expirationDate) {
-        super(name, color, price, size, material, quantity, brand, calories);
-        this.storageCondition = storageCondition;
-        this.expirationDate = expirationDate;
+    /**
+     * ShelfsTable Class COnstructor
+     * @param name
+     * @param color
+     * @param price
+     * @param size
+     * @param material
+     * @param quantity
+     * @param brand
+     * @param category
+     * @param weight
+     * @param dimensions
+     * @param tablesize
+     */
+    public ShelfStable(String name, String color, double price, String size, String material, int quantity, String brand, int category, int weight, int dimensions, String tablesize) {
+        super(name, color, price, size, material, quantity, brand, category, weight, dimensions);
+        this.TableSize = tablesize;
     }
 
-
-    public String getStorageCondition() {
-        return storageCondition;
+    /**
+     * Table Size Getter
+     * @return String
+     */
+    public String getTableSize() {
+        return TableSize;
     }
 
-
-    public String getExpirationDate() {
-        return expirationDate;
+    /**
+     * Table Size Setter
+     * @param tableSize
+     */
+    public void setTableSize(String tableSize) {
+        TableSize = tableSize;
     }
 
-
-    public void setStorageCondition(String storageCondition) {
-        this.storageCondition = storageCondition;
+    /**
+     * Displays ShelfsTable Class Information
+     */
+    public void displaysShelfStableInfo() {
+        super.displayDetails();
+        System.out.println("Storage Condition: " + TableSize);
     }
-
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
-    }
-
 }
