@@ -2,70 +2,109 @@
  * Class: CSC-331-002
  * @author Gabriel Strickland
  * Date: 3/27/2025
- * Purpose: Electronics Item Class
+ * Purpose: Electronics Item Class for the Electronic Based Items
  */
 
-public class ElectronicsItem {
-    private String Name;
-    private String ElectronicType;
-    private Double ElectronicCost;
-    private String ElectronicBrand;
+public class ElectronicsItem extends StoreItem{
+    private String type;
+    private String OS;
+    private String model;
+    private String plugType;
 
-    public ElectronicsItem(String Name, String ElectronicType, Double ElectronicCost, String ElectronicBrand){
-        this.Name = Name;
-        this.ElectronicType = ElectronicType;
-        this.ElectronicCost = ElectronicCost;
-        this.ElectronicBrand = ElectronicBrand;
+    /**
+     * Electronics Item Constructor
+     * @param name
+     * @param color
+     * @param price
+     * @param OS
+     * @param model
+     * @param plugType
+     * @param brand
+     * @param quantity
+     */
+    public ElectronicsItem(String name, String color, double price, String OS, String model, String plugType, String brand, int quantity, String type){
+        super(name,color, price, brand, quantity);
+        this.model = model;
+        this.OS = OS;
+        this.plugType = plugType;
+        this.type = type;
+
     }
 
     //Accessors
 
     /**
-     *
-     * @return
+     * Model Type Getter
+     * @return String model
      */
-    public String getName() {
-        return Name;
+    public String getModel() {
+        return model;
     }
 
     /**
-     *
-     * @return void
+     * OS getter
+     * @return String OS
      */
-    public String getElectronicType() {
-        return ElectronicType;
+    public String getOS(){
+        return OS;
     }
 
     /**
-     *
-     * @return
+     * PlugType Getter
+     * @return String plugType
      */
-    public Double getElectronicCost() {
-        return ElectronicCost;
+    public String getPlugType() {
+        return plugType;
     }
 
     /**
-     *
+     * Electronic Type getter
      * @return
      */
-    public String getElectronicBrand() {
-        return ElectronicBrand;
+    public String getType() {
+        return type;
     }
 
     //Mutators
-    public void setName(String name) {
-        Name = name;
+
+    /**
+     * Model Type Setter
+     * @param model
+     */
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public void setElectronicType(String electronicType) {
-        ElectronicType = electronicType;
+    /**
+     * OS Type Setter
+     * @param OS
+     */
+    public void setOS(String OS) {
+        this.OS = OS;
     }
 
-    public void setElectronicCost(Double electronicCost) {
-        ElectronicCost = electronicCost;
+    /**
+     * Plug Type Setter
+     * @param plugType
+     */
+    public void setPlugType(String plugType) {
+        this.plugType = plugType;
     }
 
-    public void setElectronicBrand(String electronicBrand) {
-        ElectronicBrand = electronicBrand;
+    /**
+     * Type Setter
+     * @param type
+     */
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public void displayDetails(){
+        super.displayDetails();
+        System.out.println("Type: " + type);
+        System.out.println("Model: " + model);
+        System.out.println("Operating System: " + OS);
+        System.out.println("PlugType: " + plugType);
     }
 }
