@@ -474,7 +474,6 @@ public class BoxStoreBeachumStricklandDhalai {
 
                 break;  // Exit the loop to checkout
             }
-            // If the user wants to buy another item, the loop continues and the category selection is prompted again
         }
 
         //Displays each category one by one after Items are sold

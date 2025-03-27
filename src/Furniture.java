@@ -67,6 +67,9 @@ public class Furniture extends HouseholdItem {
         NumParts = numParts;
     }
 
+    /**
+     * Displays info for furniture
+     */
     //Behaviors
     public void displayFurnitureInfo() {
         super.displayDetails();

@@ -117,6 +117,10 @@ public class ElectronicsItem extends StoreItem{
         WarrantyPeriod = warrantyPeriod;
     }
 
+    /**
+     * Method to display the details for ElectronicsItem
+     *
+     */
     @Override
     public void displayDetails(){
         super.displayDetails();
