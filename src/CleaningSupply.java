@@ -36,7 +36,7 @@ public class CleaningSupply extends HouseholdItem {
      * @param packagingType
      * @param recommendedSurfaces
      */
-    public CleaningSupply(String name, String color, double price, String size, String material, int quantity, String brand, String category, double weight, String dimensions, LocalDate expirationDate, String packagingType, String recommendedSurfaces) {
+    public CleaningSupply(String name, String color, double price, String size, String material, int quantity, String brand, int category, double weight, double dimensions, LocalDate expirationDate, String packagingType, String recommendedSurfaces) {
         super(name, color, price, size, material, quantity, brand, category, weight, dimensions);
         this.expirationDate = expirationDate;
         this.packagingType = packagingType;

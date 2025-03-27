@@ -13,22 +13,18 @@
 class ShelfStable extends FoodItem {
     private String storageCondition;
     private String expirationDate;
-    private String brand;
 
-    public ShelfStable(String name, int calories, double price, String storageCondition, String expirationDate, String brand) {
-        super(name, calories, price);
+    public ShelfStable(String name, String color, double price, String size, String material, int quantity, String brand, int calories, String storageCondition, String expirationDate) {
+        super(name, color, price, size, material, quantity, brand, calories);
         this.storageCondition = storageCondition;
         this.expirationDate = expirationDate;
-        this.brand = brand;
     }
+
 
     public String getStorageCondition() {
         return storageCondition;
     }
 
-    public String getBrand() {
-        return brand;
-    }
 
     public String getExpirationDate() {
         return expirationDate;
@@ -43,7 +39,4 @@ class ShelfStable extends FoodItem {
         this.expirationDate = expirationDate;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
 }

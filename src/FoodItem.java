@@ -10,38 +10,20 @@
  * Purpose: To describe a food item
  */
 
-class FoodItem {
-    private String name;
+class FoodItem extends StoreItem {
     private int calories;
-    private double price;
 
-    public FoodItem(String name, int calories, double price) {
-        this.name = name;
+    public FoodItem(String name, String color, double price, String size, String material, int quantity, String brand, int calories) {
+        super(name, color, price, size, material, quantity, brand);
         this.calories = calories;
-        this.price = price;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getCalories() {
         return calories;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setCalories(int calories) {
         this.calories = calories;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
 }
