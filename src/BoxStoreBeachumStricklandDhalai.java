@@ -1,3 +1,10 @@
+/**
+ * Class: CSC-331-002
+ * @author Preston Beachum, Gabriel Strickland
+ * Date: 3/27/2025
+ * Purpose: Box Store Driver File to run the Classes
+ */
+
 import java.util.*;
 
 public class BoxStoreBeachumStricklandDhalai {
@@ -10,7 +17,10 @@ public class BoxStoreBeachumStricklandDhalai {
     private static final List<StoreItem> clothingInventory = new ArrayList<>();
     private static final List<StoreItem> householdInventory = new ArrayList<>();
 
-
+    /**
+     * Main Method for running
+     * @param args
+     */
     public static void main(String[] args) {
         while (true) {
             System.out.println("\nWelcome to Wilmington Quick Shop!");
