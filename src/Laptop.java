@@ -10,8 +10,8 @@ public class Laptop extends ElectronicsItem {
     private int LaptopPixelCount;
 
     //Constructor
-    public Laptop(String name, String color, double price, String OS, String model, String plugType, String brand, int quantity, String type, int LaptopPixelCount){
-        super(name, color, price, OS, model, plugType,  brand, quantity, type);
+    public Laptop(String name, String color, double price, String OS, String model, String plugType, String brand, int quantity, String type, int WarrantyPeriod, int LaptopPixelCount){
+        super(name, color, price, quantity, model, plugType,  brand, OS, type, WarrantyPeriod);
         this.LaptopPixelCount = LaptopPixelCount;
 
     }

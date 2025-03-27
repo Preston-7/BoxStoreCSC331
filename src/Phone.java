@@ -12,8 +12,8 @@ public class Phone extends ElectronicsItem {
     private int BatteryPercent;
 
     //Constructor
-    public Phone(String name, String color, double price, String OS, String model, String plugType, String brand, int quantity, String type, int PhoneLength, int PhoneWidth, int BatteryPercent){
-        super(name, color, price, OS, model, plugType,  brand, quantity, type);
+    public Phone(String name, String color, double price, int quantity, String brand, String OS, String model, String plugType, String type, int WarrantyPeriod, int PhoneLength, int PhoneWidth, int BatteryPercent){
+        super(name, color, price, quantity, model, plugType,  brand, OS, type, WarrantyPeriod);
         this.PhoneLength = PhoneLength;
         this.PhoneWidth = PhoneWidth;
         this.BatteryPercent = BatteryPercent;

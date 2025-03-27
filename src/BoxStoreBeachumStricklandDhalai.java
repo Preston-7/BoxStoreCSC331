@@ -45,6 +45,10 @@ public class BoxStoreBeachumStricklandDhalai {
         }
     }
 
+    /**
+     * Adds Items to Box Store Inventory for later use
+     * @return NULL
+     */
     private static void addItemToInventory() {
         System.out.println("Select category: 1. Food 2. Electronics 3. Clothing 4. Household");
 
@@ -111,8 +115,17 @@ public class BoxStoreBeachumStricklandDhalai {
                 break;
 
             case 2: // Electronics
-                System.out.print("Enter brand: ");
-                String eBrand = scanner.nextLine();
+                System.out.print("Enter Electronic Type (Laptop, Phone, TV): ");
+                String etype = scanner.nextLine();
+
+                System.out.print("Enter Operating System: ");
+                String OS = scanner.nextLine();
+
+                System.out.print("Enter model: ");
+                String model = scanner.nextLine();
+
+                System.out.print("Enter Plug Type (USBa, USB, USBc): ");
+                String plugtype = scanner.nextLine();
 
                 System.out.print("Enter warranty period (years): ");
                 if (!scanner.hasNextInt()) {
@@ -123,8 +136,8 @@ public class BoxStoreBeachumStricklandDhalai {
                 int warranty = scanner.nextInt();
                 scanner.nextLine(); // Consume newline
 
-//                item = new ElectronicsItem(name, color, price, quantity, eBrand, warranty);
-                //electronicsInventory.add(item);
+                item = new ElectronicsItem(name, color, price, quantity, brand, OS, model, plugtype, etype, warranty);
+                electronicsInventory.add(item);
                 break;
 
             case 3: // Clothing
@@ -172,31 +185,35 @@ public class BoxStoreBeachumStricklandDhalai {
         System.out.println("Item added successfully.");
     }
 
+    /**
+     * Method used to display the inventory By category
+     * @param category
+     */
     private static void displayInventoryByCategory(int category) {
         System.out.println("\nCurrent Inventory for Selected Category:");
         boolean found = false;
         switch (category) {
             case 1: // Food
                 for (StoreItem item : foodInventory) {
-                    System.out.println(item);
+                    System.out.println(item.toString());
                     found = true;
                 }
                 break;
             case 2: // Electronics
                 for (StoreItem item : electronicsInventory) {
-                    System.out.println(item);
+                    System.out.println(item.toString());
                     found = true;
                 }
                 break;
             case 3: // Clothing
                 for (StoreItem item : clothingInventory) {
-                    System.out.println(item);
+                    System.out.println(item.toString());
                     found = true;
                 }
                 break;
             case 4: // Household
                 for (StoreItem item : householdInventory) {
-                    System.out.println(item);
+                    System.out.println(item.toString());
                     found = true;
                 }
                 break;
@@ -210,6 +227,10 @@ public class BoxStoreBeachumStricklandDhalai {
         }
     }
 
+    /**
+     * Method used for Creating a New Store Item
+     * @param category
+     */
     private static void createNewItem(int category) {
         System.out.print("Enter item name: ");
         String name = scanner.nextLine();
@@ -249,7 +270,10 @@ public class BoxStoreBeachumStricklandDhalai {
         System.out.println("Item added successfully.");
     }
 
-
+    /**
+     * Method used for Updating Items that are inside the Inventory
+     * @param category
+     */
     private static void updateExistingItem(int category) {
         System.out.print("Enter the name of the item to update: ");
         String itemName = scanner.nextLine();
@@ -296,10 +320,15 @@ public class BoxStoreBeachumStricklandDhalai {
         createNewItem(category);
     }
 
+    /**
+     * Method for Selling items in the Inventory, Displays the Order After Checkout
+     */
     private static void sellItem() {
         double grandTotal = 0; // Variable to accumulate the total price for all items
         double grandTax = 0;   // Variable to accumulate the tax for all items
         double grandTotalWithTax = 0; // Variable to accumulate the total price with tax for all items
+
+        List<String> soldItems = new ArrayList<>(); //List of Sold Items for Later Display
 
         while (true) {  // Keep asking for items until the user decides to stop
             System.out.println("\nSelect category to shop: 1. Food 2. Electronics 3. Clothing 4. Household");
@@ -312,6 +341,25 @@ public class BoxStoreBeachumStricklandDhalai {
             scanner.nextLine(); // Consume newline
 
             List<StoreItem> availableItems = new ArrayList<>();
+            List<String> PrivacyPolicies = new ArrayList<>();
+
+            //Privacy Policy Saver
+            //Food
+            if (category == 1){
+                PrivacyPolicies.add("\nFood bought from this Store cannot be returned and are for Solo Use.");
+            }
+            //Electronics
+            if (category == 2){
+                PrivacyPolicies.add("\nElectronics are subject to a small time  protection Warranty.");
+            }
+            //Clothing
+            if (category == 3){
+                PrivacyPolicies.add("\nClothes are subject to fit and return policies.");
+            }
+            //Household
+            if (category == 4){
+                PrivacyPolicies.add("\nHousehold Items bought from this store are subject to a small return window of 30 days.");
+            }
 
             // Check the corresponding list for items based on selected category
             switch (category) {
@@ -388,6 +436,10 @@ public class BoxStoreBeachumStricklandDhalai {
             grandTax += taxAmount;
             grandTotalWithTax += totalWithTax;
 
+            //Add Item to Sold Items List
+            String soldItemDetails = String.format("\n%s: $%.2f x %d - $%.2f || Tax: $%.2f, Total With Tax: $%.2f ||", selectedItem.getName(), price, quantityToPurchase, total, taxAmount, totalWithTax);
+            soldItems.add(soldItemDetails);
+
             // Ask if user wants to buy another item
             System.out.print("Would you like to buy another item? (Y/N): ");
             String anotherItem = scanner.nextLine().toUpperCase();
@@ -397,10 +449,35 @@ public class BoxStoreBeachumStricklandDhalai {
                 System.out.printf("Total (before tax): $%.2f\n", grandTotal);
                 System.out.printf("Tax: $%.2f\n", grandTax);
                 System.out.printf("Total (with tax): $%.2f\n", grandTotalWithTax);
+
+                //Prints Sold Items
+                System.out.println("\nSold Items: ");
+                for(String soldItem : soldItems){
+                    System.out.println(soldItem);
+                }
+
+                System.out.println("\nPrivacy Policies for Bought Items: ");
+                for(String policy : PrivacyPolicies){
+                    System.out.println(policy);
+                }
+
+
                 break;  // Exit the loop to checkout
             }
             // If the user wants to buy another item, the loop continues and the category selection is prompted again
         }
+
+        //Displays each category one by one after Items are sold
+        System.out.println("\nItems Left in Inventory by Category: ");
+        System.out.println("\nFood Items ");
+        displayInventoryByCategory(1);
+        System.out.println("\nElectronic Items ");
+        displayInventoryByCategory(2);
+        System.out.println("\nClothing Items ");
+        displayInventoryByCategory(3);
+        System.out.println("\nHousehold Items ");
+        displayInventoryByCategory(4);
+
     }
-    }
+}
 

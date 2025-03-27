@@ -218,4 +218,13 @@ public class StoreItem {
             System.out.println("Quantity cannot be negative.");
         }
     }
+
+    /**
+     * Method to Override the toString() Function
+     * @return
+     */
+    @Override
+    public String toString(){
+        return String.format("%s: Color: %s || Price: %.2f || Size: %s || Material: %s || Quantity: %d || Brand: %s", name, color, price, size, material, quantity, brand);
+    }
 }

@@ -10,6 +10,7 @@ public class ElectronicsItem extends StoreItem{
     private String OS;
     private String model;
     private String plugType;
+    private int WarrantyPeriod;
 
     /**
      * Electronics Item Constructor
@@ -22,12 +23,13 @@ public class ElectronicsItem extends StoreItem{
      * @param brand
      * @param quantity
      */
-    public ElectronicsItem(String name, String color, double price, String OS, String model, String plugType, String brand, int quantity, String type){
+    public ElectronicsItem(String name, String color, double price, int quantity, String brand, String OS, String model, String plugType, String type, int WarrantyPeriod){
         super(name, color, price, brand, quantity);
         this.model = model;
         this.OS = OS;
         this.plugType = plugType;
         this.type = type;
+        this.WarrantyPeriod = WarrantyPeriod;
 
     }
 
@@ -65,6 +67,14 @@ public class ElectronicsItem extends StoreItem{
         return type;
     }
 
+    /**
+     * Warranty Period Getter
+     * @return
+     */
+    public int getWarrantyPeriod() {
+        return WarrantyPeriod;
+    }
+
     //Mutators
 
     /**
@@ -99,6 +109,14 @@ public class ElectronicsItem extends StoreItem{
         this.type = type;
     }
 
+    /**
+     * Warranty Period Setter
+     * @param warrantyPeriod
+     */
+    public void setWarrantyPeriod(int warrantyPeriod) {
+        WarrantyPeriod = warrantyPeriod;
+    }
+
     @Override
     public void displayDetails(){
         super.displayDetails();
@@ -106,5 +124,6 @@ public class ElectronicsItem extends StoreItem{
         System.out.println("Model: " + model);
         System.out.println("Operating System: " + OS);
         System.out.println("PlugType: " + plugType);
+        System.out.println("Warranty Period: " + WarrantyPeriod);
     }
 }

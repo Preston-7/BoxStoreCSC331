@@ -13,8 +13,8 @@ public class TV extends ElectronicsItem {
 
     //Constructor
 
-    public TV(String name, String color, double price, String OS, String model, String plugType, String brand, int quantity, String type, int TVLength, int TVHeight, String TVDefinition){
-        super(name, color, price, OS, model, plugType,  brand, quantity, type);
+    public TV(String name, String color, double price, String OS, String model, String plugType, String brand, int quantity, String type, int WarrantyPeriod, int TVLength, int TVHeight, String TVDefinition){
+        super(name, color, price, quantity, model, plugType,  brand, OS, type, WarrantyPeriod);
         this.TVDefinition = TVDefinition;
         this.TVHeight = TVHeight;
         this.TVLength = TVLength;

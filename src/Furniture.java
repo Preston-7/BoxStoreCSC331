@@ -24,7 +24,7 @@ public class Furniture extends HouseholdItem {
      * @param LegNumber
      * @param NumParts
      */
-    public Furniture(String name, String color, double price, String size, String material, int quantity, String brand, String category, double weight, String dimensions, int LegNumber, int NumParts){
+    public Furniture(String name, String color, double price, String size, String material, int quantity, String brand, int category, double weight, double dimensions, int LegNumber, int NumParts){
         super(name, color, price, size, material, quantity, brand, category, weight, dimensions);
         this.LegNumber = LegNumber;
         this.NumParts = NumParts;
