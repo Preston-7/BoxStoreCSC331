@@ -447,7 +447,7 @@ public class BoxStoreBeachumStricklandDhalai {
             grandTotalWithTax += totalWithTax;
 
             //Add Item to Sold Items List
-            String soldItemDetails = String.format("\n%s: $%.2f x %d - $%.2f || Tax: $%.2f, Total With Tax: $%.2f ||", selectedItem.getName(), price, quantityToPurchase, total, taxAmount, totalWithTax);
+            String soldItemDetails = String.format("\n%s: $%.2f x %d = $%.2f || Tax: $%.2f, Total With Tax: $%.2f ||", selectedItem.getName(), price, quantityToPurchase, total, taxAmount, totalWithTax);
             soldItems.add(soldItemDetails);
 
             // Ask if user wants to buy another item
