@@ -14,11 +14,12 @@ class Fruit extends FoodItem {
     private String taste;
     private String size;
 
-    public Fruit(String name, int calories, double price, String taste, String size) {
-        super(name, calories, price);
+    public Fruit(String name, String color, double price, String size, String material, int quantity, String brand, int calories, String taste, String fruitSize) {
+        super(name, color, price, size, material, quantity, brand, calories);
         this.taste = taste;
-        this.size = size;
+        this.size = fruitSize;
     }
+
 
     public String getTaste() {
         return taste;

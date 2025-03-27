@@ -10,9 +10,9 @@
  * Purpose: To describe household items
  */
 public class HouseholdItem extends StoreItem {
-    private String category;
+    private int category;
     private double weight;
-    private String dimensions;
+    private double dimensions;
 
     /**
      * Constructs a new HouseholdItem with specified attributes.
@@ -28,7 +28,7 @@ public class HouseholdItem extends StoreItem {
      * @param weight
      * @param dimensions
      */
-    public HouseholdItem(String name, String color, double price, String size, String material, int quantity, String brand, String category, double weight, String dimensions) {
+    public HouseholdItem(String name, String color, double price, String size, String material, int quantity, String brand, int category, double weight, double dimensions) {
         super(name, color, price, size, material, quantity, brand);
         this.category = category;
         this.weight = weight;
@@ -39,7 +39,7 @@ public class HouseholdItem extends StoreItem {
      *
      * @return category
      */
-    public String getCategory() {
+    public int getCategory() {
         return category;
     }
 
@@ -55,7 +55,7 @@ public class HouseholdItem extends StoreItem {
      *
      * @return dimensions
      */
-    public String getDimensions() {
+    public double getDimensions() {
         return dimensions;
     }
 
@@ -63,7 +63,7 @@ public class HouseholdItem extends StoreItem {
      *
      * @param category
      */
-    public void setCategory(String category) {
+    public void setCategory(int category) {
         this.category = category;
     }
 
@@ -79,7 +79,7 @@ public class HouseholdItem extends StoreItem {
      *
      * @param dimensions
      */
-    public void setDimensions(String dimensions) {
+    public void setDimensions(double dimensions) {
         this.dimensions = dimensions;
     }
 

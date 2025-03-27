@@ -15,11 +15,11 @@ class Vegetables extends FoodItem {
     private String color;
 
 
-    public Vegetables(String name, int calories, double price, String texture, String color) {
-        super(name, calories, price);
+    public Vegetables(String name, String color, double price, String size, String material, int quantity, String brand, int calories, String texture) {
+        super(name, color, price, size, material, quantity, brand, calories);
         this.texture = texture;
-        this.color = color;
     }
+
 
 
     public String getTexture() {
