@@ -2,59 +2,32 @@
  * Class: CSC-331-002
  * @author Gabriel Strickland
  * Date: 3/27/2025
- * Purpose: Electronics Item Class
+ * Purpose: TV subclass of the ElectronicsItem class
  */
 
-public class TV {
+public class TV extends ElectronicsItem {
     //Attributes
-    private String TVBrand;
     private String TVDefinition;
-    private double TVCost;
     private int TVLength;
     private int TVHeight;
 
     //Constructor
 
-    /**
-     * Constructor For the TV Class
-     * @param TVBrand
-     * @param TVDefinition
-     * @param TVCost
-     * @param TVLength
-     * @param TVHeight
-     */
-    TV(String TVBrand, String TVDefinition, double TVCost, int TVLength, int TVHeight){
-        this.TVBrand = TVBrand;
+    public TV(String name, String color, double price, String OS, String model, String plugType, String brand, int quantity, String type, int TVLength, int TVHeight, String TVDefinition){
+        super(name, color, price, OS, model, plugType,  brand, quantity, type);
         this.TVDefinition = TVDefinition;
-        this.TVCost = TVCost;
-        this.TVLength = TVLength;
         this.TVHeight = TVHeight;
+        this.TVLength = TVLength;
+
     }
 
     //Getters
-
-    /**
-     * Gets the TV Brand
-     * @return String TVBrand
-     */
-    public String getTVBrand() {
-        return TVBrand;
-    }
-
     /**
      * Gets the TV Definition
      * @return String TVDefinition
      */
     public String getTVDefinition() {
         return TVDefinition;
-    }
-
-    /**
-     * Gets the TV Cost
-     * @return double TV Cost
-     */
-    public double getTVCost() {
-        return TVCost;
     }
 
     /**
@@ -72,30 +45,14 @@ public class TV {
     public int getTVHeight() {
         return TVHeight;
     }
+
     //Setters
-
-    /**
-     * Sets the TV Brand to a new Value
-     * @param TVBrand
-     */
-    public void setTVBrand(String TVBrand) {
-        this.TVBrand = TVBrand;
-    }
-
     /**
      * Sets the TV Definition to a new Value
      * @param TVDefinition
      */
     public void setTVDefinition(String TVDefinition) {
         this.TVDefinition = TVDefinition;
-    }
-
-    /**
-     * Sets the TV Cost to a new Value
-     * @param TVCost
-     */
-    public void setTVCost(double TVCost) {
-        this.TVCost = TVCost;
     }
 
     /**
@@ -112,5 +69,19 @@ public class TV {
      */
     public void setTVLength(int TVLength) {
         this.TVLength = TVLength;
+    }
+
+    //Behaviors
+
+    /**
+     * Displays TV Information
+     * Prints Name, color, price, OS, model, plugType, brand, quantity, type, TVLength, TvHeight, TVDefinition
+     */
+    public void displayTVInfo(){
+        super.displayDetails();
+        System.out.println("TV Length: " + TVLength);
+        System.out.println("TV Height: " + TVHeight);
+        System.out.println("TV Definition: " + TVDefinition);
+
     }
 }

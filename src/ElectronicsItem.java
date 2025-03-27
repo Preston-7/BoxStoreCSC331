@@ -23,7 +23,7 @@ public class ElectronicsItem extends StoreItem{
      * @param quantity
      */
     public ElectronicsItem(String name, String color, double price, String OS, String model, String plugType, String brand, int quantity, String type){
-        super(name,color, price, brand, quantity);
+        super(name, color, price, brand, quantity);
         this.model = model;
         this.OS = OS;
         this.plugType = plugType;

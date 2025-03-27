@@ -40,6 +40,22 @@ public class StoreItem {
         this.brand = brand;
     }
 
+    /**
+     * Constructor for the ElectronicsItem Classes
+     * @param name
+     * @param color
+     * @param price
+     * @param brand
+     * @param quantity
+     */
+    public StoreItem(String name, String color, double price, String brand, int quantity) {
+        this.name = name;
+        this.color = color;
+        this.price = price;
+        this.brand = brand;
+        this.quantity = quantity;
+    }
+
     // Getters
 
     /**

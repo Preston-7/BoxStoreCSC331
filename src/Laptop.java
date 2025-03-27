@@ -2,61 +2,24 @@
  * Class: CSC-331-002
  * @author Gabriel Strickland
  * Date: 3/27/2025
- * Purpose: Electronics Item Class
+ * Purpose: Laptop subclass of the ElectronicsItem Class
  */
 
-public class Laptop {
+public class Laptop extends ElectronicsItem {
     //Attributes
-    private String LaptopBrand;
-    private double LaptopCost;
-    private String LaptopModel;
     private int LaptopPixelCount;
 
     //Constructor
-
-    /**
-     * Constuctor For the Laptop Class
-     * @param LaptopBrand
-     * @param LaptopCost
-     * @param LaptopModel
-     * @param LaptopPixelCount
-     */
-    Laptop(String LaptopBrand, double LaptopCost, String LaptopModel, int LaptopPixelCount){
-        this.LaptopBrand = LaptopBrand;
-        this.LaptopCost = LaptopCost;
-        this.LaptopModel = LaptopModel;
+    public Laptop(String name, String color, double price, String OS, String model, String plugType, String brand, int quantity, String type, int LaptopPixelCount){
+        super(name, color, price, OS, model, plugType,  brand, quantity, type);
         this.LaptopPixelCount = LaptopPixelCount;
+
     }
 
     //Getters
-
     /**
-     * Gets Laptop Brand
-     * @return String LaptopBrand
-     */
-    public String getLaptopBrand() {
-        return LaptopBrand;
-    }
-
-    /**
-     * Gets Laptop Cost
-     * @return double LaptopCost
-     */
-    public double getLaptopCost() {
-        return LaptopCost;
-    }
-
-    /**
-     * Gets Laptop Model
-     * @return String LaptopModel
-     */
-    public String getLaptopModel() {
-        return LaptopModel;
-    }
-
-    /**
-     * Gets Laptop Pixel Count
-     * @return int LaptopPixelCount
+     * Laptop Pixel Count Getter
+     * @return
      */
     public int getLaptopPixelCount() {
         return LaptopPixelCount;
@@ -65,34 +28,22 @@ public class Laptop {
     //Setters
 
     /**
-     * Sets Laptop Brand to new value
-     * @param laptopBrand
-     */
-    public void setLaptopBrand(String laptopBrand) {
-        LaptopBrand = laptopBrand;
-    }
-
-    /**
-     * Sets Laptop Cost to new Value
-     * @param laptopCost
-     */
-    public void setLaptopCost(double laptopCost) {
-        LaptopCost = laptopCost;
-    }
-
-    /**
-     * Sets Laptop Model to new Value
-     * @param laptopModel
-     */
-    public void setLaptopModel(String laptopModel) {
-        LaptopModel = laptopModel;
-    }
-
-    /**
-     * Sets Laptop Pixel Count to New Value
+     * Laptop Pixel Count Setter
      * @param laptopPixelCount
      */
     public void setLaptopPixelCount(int laptopPixelCount) {
         LaptopPixelCount = laptopPixelCount;
+    }
+
+    //Behaviors
+
+    /**
+     * Displays Laptop Information
+     * Prints Name, color, price, OS, model, plugType, brand, quantity, type, LaptopPixelCount
+     */
+    public void displayLaptopInfo(){
+        super.displayDetails();
+        System.out.println("Phone Length: " + LaptopPixelCount);
+
     }
 }

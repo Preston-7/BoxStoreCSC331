@@ -2,114 +2,59 @@
  * Class: CSC-331-002
  * @author Gabriel Strickland
  * Date: 3/27/2025
- * Purpose: Electronics Item Class
+ * Purpose: Phone subclass of the ElectronicsItem Class
  */
 
-public class Phone {
+public class Phone extends ElectronicsItem {
     //Attributes
-    private String PhoneBrand;
-    private String PhoneModel;
-    private double PhoneCost;
-    private int PhoneWidth;
     private int PhoneLength;
+    private int PhoneWidth;
+    private int BatteryPercent;
 
     //Constructor
-    /**
-     * Constructor For the Phone Class
-     * @param PhoneBrand
-     * @param PhoneModel
-     * @param PhoneCost
-     * @param PhoneWidth
-     * @param PhoneLength
-     */
-    Phone(String PhoneBrand, String PhoneModel, double PhoneCost, int PhoneWidth, int PhoneLength){
-        this.PhoneBrand = PhoneBrand;
-        this.PhoneModel = PhoneModel;
-        this.PhoneCost = PhoneCost;
-        this.PhoneWidth = PhoneWidth;
+    public Phone(String name, String color, double price, String OS, String model, String plugType, String brand, int quantity, String type, int PhoneLength, int PhoneWidth, int BatteryPercent){
+        super(name, color, price, OS, model, plugType,  brand, quantity, type);
         this.PhoneLength = PhoneLength;
+        this.PhoneWidth = PhoneWidth;
+        this.BatteryPercent = BatteryPercent;
     }
 
     //Getters
-    /**
-     * Gets the Phone Brand
-     * @return String PhoneBrand
-     */
-    public String getPhoneBrand() {
-        return PhoneBrand;
-    }
-
-    /**
-     * Gets the Phone Model
-     * @return String Phone Model
-     */
-    public String getPhoneModel() {
-        return PhoneModel;
-    }
-
-    /**
-     * Gets the Phone Cost
-     * @return double PhoneCost
-     */
-    public double getPhoneCost() {
-        return PhoneCost;
-    }
-
-    /**
-     * Gets the Phone Width
-     * @return int Phone Width
-     */
     public int getPhoneWidth() {
         return PhoneWidth;
     }
 
-    /**
-     * gets the Phone Length
-     * @return int PhoneLength
-     */
     public int getPhoneLength() {
         return PhoneLength;
     }
 
+    public int getBatteryPercent() {
+        return BatteryPercent;
+    }
+
     //Setters
-
-    /**
-     * Sets the Phone Brand to new value
-     * @param phoneBrand
-     */
-    public void setPhoneBrand(String phoneBrand) {
-        PhoneBrand = phoneBrand;
+    public void setPhoneLength(int phoneLength) {
+        PhoneLength = phoneLength;
     }
 
-    /**
-     * Sets the Phone Model to a new Value
-     * @param phoneModel
-     */
-    public void setPhoneModel(String phoneModel) {
-        PhoneModel = phoneModel;
-    }
-
-    /**
-     * Sets the Phone Cost to a new Value
-     * @param phoneCost
-     */
-    public void setPhoneCost(double phoneCost) {
-        PhoneCost = phoneCost;
-    }
-
-    /**
-     * Sets the Phone Width to a new value
-     * @param phoneWidth
-     */
     public void setPhoneWidth(int phoneWidth) {
         PhoneWidth = phoneWidth;
     }
 
+    public void setBatteryPercent(int batteryPercent) {
+        BatteryPercent = batteryPercent;
+    }
+
+    //Behaviors
     /**
-     * Sets the Phone Length to a new value
-     * @param phoneLength
+     * Displays information about the Phone
+     * Prints Name, color, price, OS, model, plugType, brand, quantity, type, PhoneLength, PhoneWidth, BatteryPercent
      */
-    public void setPhoneLength(int phoneLength) {
-        PhoneLength = phoneLength;
+    public void displayPhoneInfo(){
+        super.displayDetails();
+        System.out.println("Phone Length: " + PhoneLength);
+        System.out.println("Phone Width: " + PhoneWidth);
+        System.out.println("BatteryPercent: " + BatteryPercent);
+
     }
 }
